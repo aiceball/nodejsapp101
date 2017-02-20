@@ -1,0 +1,42 @@
+doctype html
+head
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+	meta(name='description', content='User Authentication')
+	meta(name='author', content='')
+	title User Authentication
+	// Latest compiled and minified CSS
+	link(rel='stylesheet', href='/css/index.css')
+body
+	.container
+	nav.navbar.navbar-default(role='navigation')
+	.container-fluid
+	// Brand and toggle get grouped for better mobile display
+	.navbar-header
+	button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+		span.sr-only Toggle navigation
+		span.icon-bar
+		span.icon-bar
+		span.icon-bar
+	// Collect the nav links, forms, and other content for toggling
+	#bs-example-navbar-collapse-1.collapse.navbar-collapse
+		ul.nav.navbar-nav
+			li
+				if user
+					p.navbar-text
+					strong Hi, user.username
+					ul.nav.navbar-nav.navbar-right
+					li
+						a(href='/logout') Log Out
+				else
+					a(href='/signin') Sign In
+	if error
+		p.alert.alert-warning error
+	if success
+		p.alert.alert-warning success
+	if notice
+		p.alert.alert-warning notice
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+	// Latest compiled and minified JavaScript
+	script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')

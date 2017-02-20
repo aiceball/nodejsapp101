@@ -1,14 +1,19 @@
-extend default
-
-block content
-  p.
-    Lorem ipsum dolor sit amet, pri tacimates salutatus forensibus ea. Sit ceteros hendrerit
-    consequuntur an, dicta tibique eu vis. Habeo impetus comprehensam te nam, in sit feugait
-    principes. Cibo possit oblique qui cu, aperiri vivendum sed ne. Minim repudiare ne cum,
-    ex graeco quodsi ius.
-
-  p.
-    Epicurei constituam sed at, id placerat similique tincidunt eam. Te quas inermis nominavi
-    vel, in sea erant debitis reformidans, an cum eripuit democritum. Usu modus primis et, his
-    errem scripserit cu. Mea cu aperiri repudiandae, id sit offendit noluisse torquatos. Sit
-    te suas fastidii, cum nonumy iriure maluisset at, vix te graeco moderatius argumentum.
+if user
+	.jumbotron
+	h1 MongoDB User Authentication
+	p Below is your profile information!
+	.panel.panel-default
+		.panel-heading
+			h3.panel-title Profile Information
+		.panel-body
+			p Username: {{user.username}}
+			p
+				| Avatar: 
+				img(src='{{user.avatar}}')
+else
+	.jumbotron
+	h1 MongoDB User Authentication
+	p Sign in and view your profile!
+	p
+		a.btn.btn-primary.btn-lg(href='/signin', role='button')
+			span.glyphicon.glyphicon-user Sign in!

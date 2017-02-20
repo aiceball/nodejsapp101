@@ -9,7 +9,7 @@
     "clean": "rm -rf static\\css && mkdir static\\css",
     "build": "npm run clean && npm run build-css",
     "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
-    "start": "node server"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -28,10 +28,25 @@
   },
   "homepage": "https://github.com/aiceball/nodejsapp101#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "bootstrap-styl": "5.0.8",
+    "cookie-parser": "^1.4.3",
+    "crypto": "0.0.3",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^16.1.0",
     "jade": "^1.11.0",
+    "method-override": "",
     "morgan": "^1.7.0",
     "nodemon": "^1.9.2",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3",
+    "passport-google": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.2",
+    "pg": "6.1.0",
+    "q": "^1.0.1",
     "stylus": "^0.54.5"
   }
 }
